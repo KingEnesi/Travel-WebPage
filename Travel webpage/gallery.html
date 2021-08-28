@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="gallery.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&family=Poppins:wght@200;300;400;500;600&display=swap"
+    rel="stylesheet">
+  <title>Document</title>
+</head>
+<body>
+    <section>
+
+          <nav>
+            <a href="#" class="logo">Travel Gallery</a>
+            <div class="nav-links" id="navLinks">
+          
+              <ul>
+                <li><a href="index.html">Back</a></li>
+              </ul>
+          
+            </div>
+          </nav>
+
+
+
+         <ul>
+            
+            <li class="list" data-filter="mountain">Beach Activities</li>
+            <li class="list" data-filter="beach">Kid's Activities</li>
+            <li class="list" data-filter="building">Water Activities</li>
+            <li class="list" data-filter="world-wonder">Grill Activities</li>
+            <li class="list" data-filter="island">Islands</li>
+         </ul>
+         <div class="places">
+            <div class="placesBox mountain"><img width="400px" src="images/helvellyn.jfif"></div>
+            <div class="placesBox beach"><img width="400px" src="images/riobeach.jfif"></div>
+            <div class="placesBox building"><img width="400px" src="images/nycbuilding.jfif"></div>
+            <div class="placesBox world-wonder"><img width="400px" src="images/chinawall.jfif"></div>
+            <div class="placesBox island"><img width="400px" src="images/maldives.jfif"></div>
+
+            <div class="placesBox mountain"><img width="400px" src="images/oldmanofconiston.jfif"></div>
+            <div class="placesBox beach"><img width="400px" src="images/miamibeach.jfif"></div>
+            <div class="placesBox building"><img width="400px" src="images/londonbuilding.jfif"></div>
+            <div class="placesBox world-wonder"><img width="400px" src="images/salisbury.jfif"></div>
+            <div class="placesBox island"><img width="400px" src="images/thailand.jfif"></div>
+
+             <div class="placesBox mountain"><img width="400px" src="images/moenaitaly.jfif"></div>
+             <div class="placesBox beach"><img width="400px" src="images/italybeach.jfif"></div>
+             <div class="placesBox building"><img width="400px" src="images/italybuilding.jfif"></div>
+             <div class="placesBox world-wonder"><img width="400px" src="images/pyramid.jfif"></div>
+             <div class="placesBox island"><img width="400px" src="images/philipines.jfif"></div>
+
+              <div class="placesBox mountain"><img width="400px" src="images/nepalmountain.jfif"></div>
+              <div class="placesBox building"><img width="400px" src="images/newyorkbuildings.jfif"></div>
+              <div class="placesBox world-wonder"><img width="400px" src="images/colosseum.jfif"></div>
+              <div class="placesBox island"><img width="400px" src="images/thailandisland.jfif"></div>
+              <div class="placesBox mountain"><img width="400px" src="images/canadamountain.jfif"></div>
+              <div class="placesBox world-wonder"><img width="400px" src="images/NorthernLights.jfif"></div>
+
+         </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+      crossorigin="anonymous"></script>
+
+      <script type="text/javascript">
+          $(document).ready(function(){ 
+              $('.list').click(function(){
+                  const value = $(this).attr('data-filter');
+                    if (value == 'all'){
+                      $('.placesBox').show('1000');
+                    }
+                    else{
+                        $('.placesBox').not('.'+value).hide('1000');
+                        $('.placesBox').filter('.'+ value).show('1000');
+                    }
+              })
+              // add active class on selected item
+              $('.list').click(function(){
+                $(this).addClass('active').siblings().removeClass('active');
+              })
+          })
+      </script>
+</body>
+</html>
